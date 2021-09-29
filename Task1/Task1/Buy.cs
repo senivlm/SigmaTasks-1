@@ -8,38 +8,60 @@ namespace Task1
 {
     public class Buy
     {
-        private int count;
-        private Product product;
-        public Product Product
+        private List<Product> products;
+        public List<Product> Products
         {
-            get => product;
+            get => products;
+        }
+        public int Count
+        {
+            get => Products.Count;
         }
 
         public double OverallCost
         {
-            get => product.Cost * count;
+            get => Products.Sum(product => product.Cost);
         }
         public double OverallWeight
         {
-            get => product.Weight * count;
+            get => Products.Sum(product => product.Weight);
         }
-        public int Count
+        public Buy(params Product[] products)
         {
-            get => count;
-            private set
+            this.products = new List<Product>();
+            for (int i = 0; i < products.Length; ++i)
             {
-                if (value < 1)
+                if (products[i] == null)
                 {
-                    count = 1;
-                    return;
+                    throw new ArgumentNullException($"products[{i}] is null.");
                 }
-                count = value;
+                Products.Add(new Product(products[i]));
             }
         }
-        public Buy(Product product, int count = 1)
+        public override string ToString()
         {
-            this.product = new Product(product);
-            this.Count = count;
+            StringBuilder sb = new();
+            sb.Append($"Count: {Count}\n");
+            sb.Append(String.Join("\n", Products.Select((product, index) => $"Product #{index + 1}:\n{product.ToString()}")));
+            sb.Append($"\nOverall weight: {OverallWeight}\n");
+            sb.Append($"Overall cost: {OverallCost}\n");
+            return sb.ToString();
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != this.GetType())
+            {
+                return false;
+            }
+            var other = obj as Buy;
+            return this.Count == other.Count &&
+                this.OverallWeight == other.OverallWeight &&
+                this.OverallCost == other.OverallCost &&
+                this.Products.Equals(other.Products);
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.Count, this.OverallCost, this.OverallWeight, this.Products);
         }
     }
 }
