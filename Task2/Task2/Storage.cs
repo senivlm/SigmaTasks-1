@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task2
 {
-    public sealed class Storage
+    public class Storage
     {
         private Product[] products = null;
         public Product this[int index]
@@ -68,12 +68,15 @@ namespace Task2
 
             }
         }
-        public void PrintProducts()
+        public string PrintProducts()
         {
+            StringBuilder sb = new();
             for (int i = 0; i < products.Length; ++i)
             {
-                Check.PrintProduct(products[i]);
+                sb.Append($"Product #{i + 1}\n");
+                sb.Append(Check.PrintProduct(products[i]) + "\n");
             }
+            return sb.ToString();
         }
         public Meat[] GetAllMeatProducts()
         {

@@ -6,29 +6,24 @@ using System.Threading.Tasks;
 
 namespace Task2
 {
-    public class Check //: Storage // Cannot derive from sealed type 'Storage'
+    public sealed class Check // other classes cannot inherit this Check class anymore.
     {
         private Check() { }
-        public static void PrintProduct(Product product)
+        public static string PrintProduct(Product product)
         {
             if (product == null)
             {
                 throw new ArgumentNullException(nameof(product));
             }
-            Console.WriteLine(product.ToString());
+            return product.ToString();
         }
-        public static void PrintBuy(Buy buy)
+        public static string PrintBuy(Buy buy)
         {
             if (buy == null)
             {
                 throw new ArgumentNullException(nameof(buy));
             }
-            Console.WriteLine("Information about product:");
-            PrintProduct(buy.Product);
-            Console.WriteLine("Information about buy:");
-            Console.WriteLine($"Count: {buy.Count}");
-            Console.WriteLine($"Overall cost: ${buy.OverallCost}");
-            Console.WriteLine($"Overall weight: {buy.OverallWeight} kg");
+            return buy.ToString();
         }
     }
 }

@@ -11,7 +11,6 @@ namespace Task2
         private string name = "Unnamed";
         private double cost = 0.0;
         private double weight = 0.0;
-
         public string Name
         {
             get => name;
@@ -54,16 +53,11 @@ namespace Task2
         }
         public Product(string name, double cost, double weight)
         {
-            this.name = name;
-            this.cost = cost;
-            this.weight = weight;
+            this.Name = name;
+            this.Cost = cost;
+            this.Weight = weight;
         }
-        public Product(Product product)
-        {
-            this.name = product.name;
-            this.cost = product.cost;
-            this.weight = product.weight;
-        }
+        public Product(Product product) : this(product.Name, product.Cost, product.Weight) { }
 
         public virtual void ChangeCost(double percents)
         {

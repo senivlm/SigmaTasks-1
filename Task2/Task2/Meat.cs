@@ -15,10 +15,10 @@ namespace Task2
             Category = category;
             Kind = kind;
         }
-        public Meat(Meat meat, Category category, Kind kind) : base(meat)
+        public Meat(Meat meat) : base(meat)
         {
-            Category = category;
-            Kind = kind;
+            Category = meat.Category;
+            Kind = meat.Kind;
         }
 
         public override void ChangeCost(double percents)

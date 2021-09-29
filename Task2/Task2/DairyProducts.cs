@@ -25,9 +25,9 @@ namespace Task2
         {
             this.DaysToExpiration = daysToExpiration;
         }
-        public DairyProducts(DairyProducts dairyProducts, int daysToExpiration) : base(dairyProducts)
+        public DairyProducts(DairyProducts dairyProducts) : base(dairyProducts)
         {
-            this.DaysToExpiration = daysToExpiration;
+            this.DaysToExpiration = dairyProducts.DaysToExpiration;
         }
 
         public override void ChangeCost(double percents)
