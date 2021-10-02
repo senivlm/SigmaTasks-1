@@ -67,13 +67,15 @@ namespace Task3
             sb.Append($"Quarter: {Quarter}\n");
             for (int i = 0; i < Indicators.Count; i++)
             {
-                string month = QuarterHelper.QuarterMonths[this.Quarter][i];
+                string month = ((Months)(((int)Quarter - 1) * 3 + i)).ToString();
                 sb.Append($"\n{month}: \n");
                 sb.Append($"Input indicator: {Indicators[i + 1].Item1}\n");
-                sb.Append($"Output indicator: {Indicators[i + 1].Item2}\n\n");
+                sb.Append($"Output indicator: {Indicators[i + 1].Item2}\n");
+                sb.Append($"Electricity used: {Indicators[i + 1].Item2 - Indicators[i + 1].Item1} kW\n\n");
             }
-            double toPay = indicators
-                .Sum(indicator => (indicator.Value.Item2 - indicator.Value.Item1) * pricePerKiloWatt);
+            double overallUsed = indicators.Sum(indicator => indicator.Value.Item2 - indicator.Value.Item1);
+            sb.Append($"Overall electricity used: {overallUsed} kW\n");
+            double toPay = overallUsed * pricePerKiloWatt;
             sb.Append(String.Format("To pay: {0:F2} UAH\n", toPay));
             sb.Append("-------------------------------------\n");
             return sb.ToString();
