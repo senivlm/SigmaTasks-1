@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Task3
 {
@@ -6,7 +7,35 @@ namespace Task3
     {
         static void Main(string[] args)
         {
-            ElectricityAccounting accounting = new(@"D:\Workspace\SigmaTasks\Task3\Task3\data.txt", 5);
+            DemonstrateMethods();
+        }
+        static void DemonstrateMethods()
+        {
+            ElectricityAccounting accounting = null;
+            try
+            {
+                accounting = new(@"D:\Workspace\SigmaTasks\Task3\Task3\data.txt", 5);
+            }
+            catch (FileNotFoundException ex)
+            {
+                Console.WriteLine("Exception was caught!");
+                Console.WriteLine(ex.Message);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine("Exception was caught!");
+                Console.WriteLine(ex.Message);
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine("Exception was caught");
+                Console.WriteLine(ex.Message);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine("Exception was caught!");
+                Console.WriteLine(ex.Message);
+            }
             int apartmentNumber = accounting.FindApartmentWithoutUsing();
             if (apartmentNumber < 0)
             {

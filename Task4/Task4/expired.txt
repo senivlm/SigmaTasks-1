@@ -1,0 +1,16 @@
+Count of removed products: 2
+
+Name: milk
+Cost: 20
+Weight: 1
+Days to expiration: 7
+Made date: 04.09.2021
+Is expired: True
+
+Name: yogurt
+Cost: 10
+Weight: 1
+Days to expiration: 10
+Made date: 04.09.2021
+Is expired: True
+

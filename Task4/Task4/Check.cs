@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Task1
+namespace Task4
 {
-    public class Check
+    public sealed class Check // other classes cannot inherit this Check class anymore.
     {
         private Check() { }
         public static string PrintProduct(Product product)
