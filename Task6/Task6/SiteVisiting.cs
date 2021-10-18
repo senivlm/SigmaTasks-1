@@ -75,7 +75,7 @@ namespace Task6
             }
         }
         public bool IsValidIP(string ip)
-        {
+        {Тут теж класична задача для регулярки!
             string[] ss = ip.Split(".");
             if (ss.Length != 4)
             {
