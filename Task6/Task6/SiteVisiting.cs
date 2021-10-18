@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Task6
 {
@@ -76,20 +77,11 @@ namespace Task6
         }
         public bool IsValidIP(string ip)
         {
-            string[] ss = ip.Split(".");
-            if (ss.Length != 4)
+            if (String.IsNullOrWhiteSpace(ip))
             {
-                return false;
+                throw new ArgumentException("String is either null or whitespace.", nameof(ip));
             }
-
-            foreach (string s in ss)
-            {
-                if (!Int32.TryParse(s, out _))
-                {
-                    return false;
-                }
-            }
-            return true;
+            return Regex.IsMatch(ip, @"^([0-9]|[1-9][1-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][1-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][1-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\.([0-9]|[1-9][1-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$");
         }
         public bool IPDataTryParse(string s, out (string, TimeSpan, DayOfWeek) record)
         {

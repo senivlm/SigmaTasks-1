@@ -8,7 +8,7 @@ namespace Task6
     {
         static void Main(string[] args)
         {
-            DemonstratePolynomials();
+           // DemonstratePolynomials();
             DemonstrateSiteVisiting();
             DemonstrateMatrix();
         }
@@ -43,6 +43,10 @@ namespace Task6
                 Console.WriteLine(ex.Message);
             }
             catch (InvalidOperationException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (FormatException ex)
             {
                 Console.WriteLine(ex.Message);
             }
