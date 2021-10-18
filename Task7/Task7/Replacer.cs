@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Task7
-{
+{ Аналогічна помилка, як і в меню
     public class Replacer
     {
         public readonly Dictionary<string, string> Replacements;
@@ -45,6 +45,7 @@ namespace Task7
                 while ((line = reader.ReadLine()) != null)
                 { 
                     MatchCollection replacements = Regex.Matches(line, @"\w+\s\-\s\w+");
+                    Можна було уникнути
                     if (replacements.Count == 0)
                     {
                         continue;
@@ -65,6 +66,7 @@ namespace Task7
             }
 
             MatchCollection mWords = Regex.Matches(text, @"\w+");
+            
             List<string> words = mWords.Select(mWord => mWord.Value).ToList();
             foreach (string word in words)
             {
