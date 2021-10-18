@@ -10,16 +10,16 @@ namespace Task7
 {
     public class Menu
     {
-        public  Dictionary<string, DishInfo> Dishes;
+        public readonly Dictionary<string, DishInfo> dishes;
 
         public Menu()
         {
-            Dishes = new();
+            dishes = new();
         }
 
         public Menu(string pathToDishesWeight, string pathToDishesPrice)
         {
-            Dishes = new();
+            dishes = new();
             ReadDishesWeight(pathToDishesWeight);
             ReadDishesPrice(pathToDishesPrice);
         }
@@ -57,13 +57,13 @@ namespace Task7
                         throw new FormatException("Failed to parse weight.");
                     }
 
-                    if (Dishes.ContainsKey(name))
+                    if (dishes.ContainsKey(name))
                     {
-                        Dishes[name].Weight += weight;
+                        dishes[name].Weight += weight;
                     }
                     else
                     {
-                        Dishes.Add(name, new DishInfo(weight, 0.0));
+                        dishes.Add(name, new DishInfo(weight, 0.0));
                     }
                 }
             }
@@ -101,18 +101,18 @@ namespace Task7
                         throw new FormatException("Failed to parse price.");
                     }
 
-                    if (Dishes.ContainsKey(name))
+                    if (dishes.ContainsKey(name))
                     {
-                        if (Dishes[name].Price != 0.0)
+                        if (dishes[name].Price != 0.0)
                         {
                             throw new InvalidOperationException($"{name} already has set price.");
                         }
 
-                        Dishes[name].Price = price * Dishes[name].Weight;
+                        dishes[name].Price = price * dishes[name].Weight;
                     }
                     else
                     {
-                        Dishes.Add(name, new DishInfo(0.0, price));
+                        dishes.Add(name, new DishInfo(0.0, price));
                     }
                 }
             }
@@ -121,7 +121,7 @@ namespace Task7
         public override string ToString()
         {
             StringBuilder sb = new();
-            foreach (KeyValuePair<string, DishInfo> dish in Dishes)
+            foreach (KeyValuePair<string, DishInfo> dish in dishes)
             {
                 sb.AppendLine($"{dish.Key,-25}|{dish.Value.Weight,-8:F3}|{dish.Value.Price,-8:F3}|");
             }

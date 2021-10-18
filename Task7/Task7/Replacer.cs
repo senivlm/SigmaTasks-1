@@ -10,16 +10,16 @@ namespace Task7
 {
     public class Replacer
     {
-        public readonly Dictionary<string, string> Replacements;
+        public readonly Dictionary<string, string> replacements;
 
         public Replacer()
         {
-            Replacements = new();
+            replacements = new();
         }
 
         public Replacer(string pathToDictionary)
         {
-            Replacements = new();
+            replacements = new();
             ReadDictionaryFromFIle(pathToDictionary);
         }
 
@@ -52,7 +52,7 @@ namespace Task7
                     foreach (Match replacement in replacements)
                     {
                         string[] keyValue = replacement.Value.Split(" - ");
-                        Replacements.Add(keyValue[0], keyValue[1]);
+                        this.replacements.Add(keyValue[0], keyValue[1]);
                     }
                 }
             }
@@ -68,15 +68,15 @@ namespace Task7
             List<string> words = mWords.Select(mWord => mWord.Value).ToList();
             foreach (string word in words)
             {
-                if (!Replacements.ContainsKey(word))
+                if (!replacements.ContainsKey(word))
                 {
                     Console.Write($"Enter replacement for {word}: ");
                     string replacement;
                     while ((replacement = Console.ReadLine()).Length == 0) ;
-                    Replacements.Add(word, replacement);
+                    replacements.Add(word, replacement);
                 }
 
-                text = text.Replace(word, Replacements[word]);
+                text = text.Replace(word, replacements[word]);
             }
             return text;
         }
