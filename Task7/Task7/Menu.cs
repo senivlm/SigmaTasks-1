@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Task7
 {
     public class Menu
-    {
+    {Чому відкрите поле? назва поля з маленької літери
         public  Dictionary<string, DishInfo> Dishes;
 
         public Menu()
@@ -44,7 +44,7 @@ namespace Task7
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
-                {
+                {Регулярні вирази - це добре!
                     if (!Regex.IsMatch(line, @"^\w+\s+\d+\.?\d*"))
                     {
                         throw new FormatException("File does not suit the format.");
