@@ -1,0 +1,4 @@
+﻿Meat, bull, 4.56, 10.0, 50, 12.08.2003, Highest, beef
+Dairy, milk, 20.0, 1.0, 7, 04.09.2021
+product, NVidia GeForce RTX 3090, 3000, 2.0, 1000, 01.01.2021
+Product, Intel Core i9-11900K, 599, 0.2, 1000, 02.02.2021
