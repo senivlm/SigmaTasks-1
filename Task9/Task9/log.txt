@@ -1,0 +1,20 @@
+﻿Invalid line: mnieso, lol, 20, 1.5, 23 05.10.2021
+Message: Failed to read the type of product.
+Date: 10/25/2021 11:32:11 AM
+
+Invalid line: mnieso, lol, 20, 1.5, 23 05.10.2021
+Message: Failed to read the type of product.
+Date: 10/25/2021 11:33:15 AM
+
+Invalid line: mnieso, lol, 20, 1.5, 23 05.10.2021
+Message: Failed to read the type of product.
+Date: 10/25/2021 11:45:11 AM
+
+Invalid line: mnieso, lol, 20, 1.5, 23 05.10.2021
+Message: Failed to read the type of product.
+Date: 10/25/2021 11:46:07 AM
+
+Invalid line: mnieso, lol, 20, 1.5, 23 05.10.2021
+Message: Failed to read the type of product.
+Date: 10/25/2021 11:46:32 AM
+
