@@ -6,7 +6,7 @@ using System.Linq;
 namespace Task8
 {
     class Program
-    {
+    {Не зливайте в один проект різні додатки
         static void Main(string[] args)
         {
             DemonstrateSorting();
