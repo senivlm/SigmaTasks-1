@@ -41,7 +41,7 @@ namespace Task8
                     Sentences.Add(sentence);
                     sentence = "";
                 }
-
+     Пояснити цей рядок
                 sentence = splits[^1];
             } 
             Sentences.Add(sentence);
