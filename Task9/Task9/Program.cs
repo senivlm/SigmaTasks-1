@@ -41,6 +41,21 @@ namespace Task9
             Console.WriteLine(storage.PrintProducts());
             storage.ShowExpiredProducts();
             Console.WriteLine(storage.PrintProducts());
+            List<Product> expensiveProducts = storage.GetProducts(product => product.Cost > 100);
+            Console.WriteLine("Products which cost more than $100: ");
+            foreach (Product product in expensiveProducts)
+            {
+                Console.WriteLine(product);
+            }
+            storage.AddProduct(new Product("Bulka", 3, 0.5, 2, DateTime.Now));
+            storage.AddProduct(new Meat("Beef", 45, 10, 5, DateTime.Now.AddDays(-1), Category.Highest, Kind.Beef));
+            List<Product> removed = storage.RemoveProducts(product => product.Weight > 1);
+            Console.WriteLine("Removed products: ");
+            foreach (Product product in removed)
+            {
+                Console.WriteLine(product);
+            }
+
         }
 
         private static void FixInvalidProduct(Storage sender, string message, string line)

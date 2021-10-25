@@ -170,6 +170,12 @@ namespace Task9.Models
             return toRemove;
         }
 
+        public List<Product> RemoveProducts(Func<Product, bool> selector)
+        {
+            List<Product> removed = GetProducts(selector);
+            removed.ForEach(product => _products.Remove(product));
+            return removed;
+        }
         public List<Product> GetProductsByName(string name)
         {
             return _products
@@ -188,6 +194,13 @@ namespace Task9.Models
         {
             return _products
                 .Where(product => Math.Abs(product.Weight - weight) < 1e-8)
+                .ToList();
+        }
+
+        public List<Product> GetProducts(Func<Product, bool> selector)
+        {
+            return _products
+                .Where(selector)
                 .ToList();
         }
     }
