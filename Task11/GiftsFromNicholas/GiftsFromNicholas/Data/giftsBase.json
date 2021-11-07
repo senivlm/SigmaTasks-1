@@ -1,0 +1,46 @@
+{
+  "BoyGifts": [
+    {
+      "BoyToy": "Car",
+      "Sweets": "Cookies",
+      "Wish": "I wish you and all your family and friends good health."
+    },
+    {
+      "BoyToy": "Dumbbells",
+      "Sweets": "ChupaChups",
+      "Wish": "I wish you to be the strongest boy in the world."
+    },
+    {
+      "BoyToy": "Robot",
+      "Sweets": "MilkyWay",
+      "Wish": "Be gentlemen and all girls will be yours."
+    },
+    {
+      "BoyToy": "Lego",
+      "Sweets": "Oranges",
+      "Wish": "I wish you to be the smartest boy in the world."
+    }
+  ],
+  "GirlGifts": [
+    {
+      "GirlToy": "Doll",
+      "Sweets": "ChupaChups",
+      "Wish": "I wish you to find the love of all your life."
+    },
+    {
+      "GirlToy": "Unicorn",
+      "Sweets": "MilkyWay",
+      "Wish": "I wish you to be the most beautiful girl in the world."
+    },
+    {
+      "GirlToy": "Bear",
+      "Sweets": "Donuts",
+      "Wish": "I wish you to succeed in all your deals."
+    },
+    {
+      "GirlToy": "Kitchen",
+      "Sweets": "Mandarins",
+      "Wish": "I wish you and all your family and friends good health."
+    }
+  ]
+}
