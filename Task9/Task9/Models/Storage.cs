@@ -7,7 +7,7 @@ using System.Text;
 namespace Task9.Models
 {
     public class Storage
-    {
+    {//Можна описувати поза класом
         public delegate void InvalidProductHandler(Storage sender, string message, string line);
         public delegate void ExpiredProductsHandler(Storage sender, List<Product> expired);
 
